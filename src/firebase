@@ -1,0 +1,19 @@
+import { initializeApp } from 'firebase/app'
+import { getFirestore, collection } from 'firebase/firestore'
+// ... other firebase imports
+
+export const firebaseApp = initializeApp({
+    apiKey: "AIzaSyDY0Z3-c_dnsXaQicB9nx1xl56HmfnBsz8",
+    authDomain: "tienda-online-7d8c9.firebaseapp.com",
+    projectId: "tienda-online-7d8c9",
+    storageBucket: "tienda-online-7d8c9.appspot.com",
+    messagingSenderId: "849231168775",
+    appId: "1:849231168775:web:07e4c70dcd47047a7b31a2",
+    measurementId: "G-BJ4VC7L9N7"
+  })
+
+// used for the firestore refs
+const db = getFirestore(firebaseApp)
+
+// here we can export reusable database references
+export const todosRef = collection(db, 'todos')
